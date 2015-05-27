@@ -1,0 +1,42 @@
+﻿<ion-view title="Tavla login">
+    <ion-content >
+    <div class="tavla-center" ng-switch="vm.state">
+        <div data-ng-switch-when="default">
+        <div class="row responsive-lg">
+            <div class="col">
+                <h1>Welcome to tavla</h1>
+                <p>You could login using one of the methods shown. The recommended method is Facebook, but Google works just fine.</p>
+            </div>
+            <div class="col">
+                <button class="button button-large button-block button-assertive" ng-click="vm.login('google')" type="submit">Google</button>
+                <button class="button button-large button-block button-positive" ng-click="vm.login('facebook')" type="submit">Facebook</button>
+            </div>
+        </div>
+        <div data-ng-switch-when="autologin">
+            <p>Autologin....</p>
+        </div>            
+        </div>
+        <div data-ng-switch-when="authenticating">
+            <p>Authenticating....</p>
+        </div>
+        <div data-ng-switch-when="login-in-process">
+            <p>Loading data from Tavla...</p>
+        </div>
+        <div data-ng-switch-when="login-fail">
+            <p>Login-fail</p>
+        </div>
+        <div data-ng-switch-when="authenticate-fail">
+            <p>Authenticate fail</p>
+        </div>
+    </div>
+    
+        
+    </ion-content>
+
+    <!--<ion-content>
+
+        <button class="button button-large button-block button-positive" ng-click="vm.login()" type="submit">Log in</button>
+        <span ng-show="vm.result.isLoggedIn">Logged in!</span>
+            <pre>{{vm|json}}</pre>
+    </ion-content>-->
+</ion-view>
